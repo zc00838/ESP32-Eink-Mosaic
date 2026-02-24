@@ -5,29 +5,27 @@
   * @version V1.0.0
   * @date    23-January-2018
   * @brief   This file provides e-Paper driver functions
-  *           void EPD_SendCommand(byte command);
-  *           void EPD_SendData(byte data);
-  *           void EPD_WaitUntilIdle();
-  *           void EPD_Send_1(byte c, byte v1);
-  *           void EPD_Send_2(byte c, byte v1, byte v2);
-  *           void EPD_Send_3(byte c, byte v1, byte v2, byte v3);
-  *           void EPD_Send_4(byte c, byte v1, byte v2, byte v3, byte v4);
-  *           void EPD_Send_5(byte c, byte v1, byte v2, byte v3, byte v4, byte v5);
-  *           void EPD_Reset();
-  *           void EPD_dispInit();
-  *           
-  *          varualbes:
-  *           EPD_dispLoad;                - pointer on current loading function
-  *           EPD_dispIndex;               - index of current e-Paper
-  *           EPD_dispInfo EPD_dispMass[]; - array of e-Paper properties
-  *           
-  ******************************************************************************
+  * void EPD_SendCommand(byte command);
+  * void EPD_SendData(byte data);
+  * void EPD_WaitUntilIdle();
+  * void EPD_Send_1(byte c, byte v1);
+  * void EPD_Send_2(byte c, byte v1, byte v2);
+  * void EPD_Send_3(byte c, byte v1, byte v2, byte v3);
+  * void EPD_Send_4(byte c, byte v1, byte v2, byte v3, byte v4);
+  * void EPD_Send_5(byte c, byte v1, byte v2, byte v3, byte v4, byte v5);
+  * void EPD_Reset();
+  * void EPD_dispInit();
+  * * varualbes:
+  * EPD_dispLoad;                - pointer on current loading function
+  * EPD_dispIndex;               - index of current e-Paper
+  * EPD_dispInfo EPD_dispMass[]; - array of e-Paper properties
+  * ******************************************************************************
   */
 /* SPI pin definition --------------------------------------------------------*/
 //#include "epd7in5_HD.h"
 
-#define PIN_SPI_SCK  18 // SCK原13改为18
-#define PIN_SPI_DIN  23 // DIN(SDA/MOSI)原14改为23
+#define PIN_SPI_SCK  13 // 恢复为13以匹配底层原理图和测试代码
+#define PIN_SPI_DIN  14 // 恢复为14以匹配底层原理图和测试代码
 #define PIN_SPI_CS   15
 #define PIN_SPI_BUSY 25//19
 #define PIN_SPI_RST  26//21
@@ -693,7 +691,7 @@ EPD_dispInfo EPD_dispMass[] =
     { EPD_Init_2in9b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"2.9 inch b"	},// k 10
     { EPD_Init_2in9b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"2.9 inch c"	},// l 11
     { EPD_Init_2in9d,		EPD_loadA,		-1  ,	0,				EPD_2IN9D_Show,		"2.9 inch d"	},// M 12
-    { EPD_Init_4in2,		EPD_loadA,		-1  ,	0,				EPD_showB,			"4.2 inch"		},// N 13
+    { EPD_Init_4in2_V2,		EPD_loadA,		-1  ,	0,				EPD_4IN2_V2_Show,	"4.2 inch"		},// N 13 -> 这一行被修改了
     { EPD_Init_4in2b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,  		"4.2 inch b"	},// O 14
     { EPD_Init_4in2b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"4.2 inch c"	},// P 15
     { EPD_5in83__init,		EPD_loadD,		-1  ,	0,				EPD_showC,			"5.83 inch"		},// Q 16
