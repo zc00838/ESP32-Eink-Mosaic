@@ -691,8 +691,8 @@ EPD_dispInfo EPD_dispMass[] =
     { EPD_Init_2in9b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"2.9 inch b"	},// k 10
     { EPD_Init_2in9b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"2.9 inch c"	},// l 11
     { EPD_Init_2in9d,		EPD_loadA,		-1  ,	0,				EPD_2IN9D_Show,		"2.9 inch d"	},// M 12
-    { EPD_Init_4in2_V2,		EPD_loadA,		-1  ,	0,				EPD_4IN2_V2_Show,	"4.2 inch"		},// N 13 -> 这一行被修改了
-    { EPD_Init_4in2b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,  		"4.2 inch b"	},// O 14
+    { EPD_Init_4in2_V2,		EPD_loadA,		-1  ,	0,				EPD_4IN2_V2_Show,	"4.2 inch"		},// N 13 -> 4.2 黑白完美版
+    { EPD_Init_4in2_V2,		EPD_loadA,		0x26,	EPD_loadA,		EPD_4IN2_V2_Show,	"4.2 inch b"	},// O 14 -> 4.2b 黑白红三色完美版
     { EPD_Init_4in2b,		EPD_loadA,		0x13,	EPD_loadA,		EPD_showB,			"4.2 inch c"	},// P 15
     { EPD_5in83__init,		EPD_loadD,		-1  ,	0,				EPD_showC,			"5.83 inch"		},// Q 16
     { EPD_5in83b__init,		EPD_loadE,		-1  ,	0,				EPD_showC,			"5.83 inch b"	},// R 17
