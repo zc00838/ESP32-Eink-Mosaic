@@ -26,8 +26,8 @@
 /* SPI pin definition --------------------------------------------------------*/
 //#include "epd7in5_HD.h"
 
-#define PIN_SPI_SCK  13
-#define PIN_SPI_DIN  14
+#define PIN_SPI_SCK  18 // SCK原13改为18
+#define PIN_SPI_DIN  23 // DIN(SDA/MOSI)原14改为23
 #define PIN_SPI_CS   15
 #define PIN_SPI_BUSY 25//19
 #define PIN_SPI_RST  26//21
